@@ -43,14 +43,15 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate{
   }
 
   canDeactivate() : boolean | Observable<boolean> | Promise<boolean>{
-    if(!this.allowEdit){
+    
+    if(!this.allowEdit){      
       return true;
     }
 
     if((this.serverName !== this.server.name || this.serverStatus !== this.server.status) && 
-    !this.changeSaved){
+    !this.changeSaved){      
       return confirm('Do you want to discard the changes?');
-    }else{
+    }else{      
       return true;
     }
   }
